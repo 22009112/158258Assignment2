@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Contact Us";
+}
+<main aria-labelledby="title">
+    <h2 id="title" style="font-family: Monotype Corsiva; color: rgb(139,69,19); font-size:500%; text-align:center">@ViewBag.Title.</h2>
+
+    <style>
+        body {
+            background-color: rgb(255,222,173);
+        }
+    </style>
+        <h2 style="font-family: Segoe Print; color: rgb(139,69,19); font-size: 300%; text-align: center ">——Your Contact Page</h2>
+    <div class="text">
+        <form action="/submit_feedback" method="post" id="myForm">
+            <label for="name">Name: </label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="mail">E-mail: </label><br>
+            <input type="text" id="mail" mail="mail"><br>
+            <label for="inquiry">Message: </label><br>
+            <textarea id="inquiry" name="inquiry" rows="3" cols="150"></textarea><br>
+            <label for="feedback">Idea: </label><br>
+            <textarea id="feedback" name="feedback" rows="3" cols="150"></textarea><br><br>
+            <div>
+                <input type="button" value="Submit" onclick="msg()" style="background-color: rgb(160,82,45); color: white; border: 5px solid rgb(139,69,19); font-size:25px; padding:5px; border-radius:5px" />
+            </div>
+        </form>
+    </div>
+        
+</main>
+<style>
+    .text{
+        position: relative;
+        top: 50%; 
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 20px;
+        text-align: center;
+        margin-top:300px;
+    }
+</style>

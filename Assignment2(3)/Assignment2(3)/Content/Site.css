@@ -1,0 +1,146 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.container body-content {
+    background-color: blue;
+}
+
+.navbar {
+    background-color: rgb(189, 131, 82);
+    padding: 10px 50px;
+    margin-block-end: -15px;
+    text-align: center;
+    text-transform: uppercase;
+    text-align:center;
+}
+
+footer#contact {
+    height: 300px;
+    background-image: url('Images/页脚1.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    left: 0;
+    right: 0;
+    padding-left: 280px;
+    position: relative;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+section#main {
+    clear: left; 
+    margin-left: 5%;
+    margin-top: 20px;
+    width: 90%; 
+}
+
+section#main > h1 {
+        margin-left: 16%;
+        color: rgb(189, 131, 82); /* set the text color to the value (189, 131, 82);*/
+        font-size: 250%;
+        font-weight: normal; /*set the font size to 180% with normal weight*/
+        letter-spacing: 5px; /*set the letter spacing to 5 pixels.*/
+        font-family: Comic Sans MS;
+    }
+
+    section#main p { /*Set the margins of paragraphs within the main section to 15 pixels*/
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 150%;
+    }
+
+    section#main aside {
+        border: 3px solid rgb(149, 91, 42); /* add a 3-pixel solid border with the color value (149, 91, 42)*/
+        color: rgb(149, 91, 42); /*set the text color to the value (149, 91, 42);*/
+        float: right;
+        margin: 10px;
+        width: 40%;
+        border-radius: 0;
+    }
+
+        section#main aside p {
+            font-size: 90%; /* set the font size to 90%*/
+            margin: 20px; /* set the margin to 20 pixels*/
+        }
+        section#main aside img{
+            width:100%;
+            height:100%;
+        }
+
+        .image-container img {
+            margin-left: 35px;
+            display: inline-block;
+            max-width: 370px;
+            height: 230px;
+            margin-bottom: 35px;
+        }
+
+div#biaoti h1 {
+    font-size: 250%;
+    color: rgb(189, 131, 82);
+    font-weight: normal; /*set the font size to 180% with normal weight*/
+    letter-spacing: 5px;
+    margin-left: 40%;
+    margin-bottom: 20px;
+    font-family: Comic Sans MS;
+}
+
+.grid-item h2 {
+    font-size: 150%;
+    color: rgb(108, 54, 9);
+    font-weight: normal; /*set the font size to 180% with normal weight*/
+    letter-spacing: 5px;
+    font-family: Yu Gothic UI Semibold;
+    margin-top: 5px;
+}
+
+.city h2 {
+    font-size: 300%;
+    color: rgb(185, 16, 7);
+    font-weight: normal; /*set the font size to 180% with normal weight*/
+    letter-spacing: 5px;
+    font-family: Segoe Print;
+    padding-top: 15px;
+    padding-bottom:20px;
+    text-align: center;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+        margin: 5px;
+    }
+
+.pagination li a {
+            display: block;
+            padding: 10px;
+            border: 2px solid #008080;
+            border-radius: 5px;
+        }
+    .page-item a{
+        text-decoration:none;
+    }

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
+        <div class="container">
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1" style="font-size:25px;">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("City", "Index", "Cities", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Attraction", "Index", "Atrractions", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+                @using (Html.BeginForm("Index", "Atrractions", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+                {
+                    <div class="form-group">
+                        <div class="input-group">
+
+                            @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "Search", style = "font-size: 30px;" })
+                            <span class="input-group-btn" style="margin-left: 10px;">
+                                
+                                <button type="submit" class="btn btn-primary" style="background-color: rgb(160,82,45); border: 5px solid rgb(139,69,19); color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 20px; border-radius: 30px">Submit</button>
+                            </span>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </nav>
+    <div id="image-container"><img width="100%" height="850" alt="Cycle Pathology" src="~/Content/Images/image.png" /></div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <hr />
+    <footer id="contact">
+        <address style="font-family: Cascadia Code SemiBold;color:rgb(255, 255, 255);font-size:130%">
+            <br />
+            E-mail: <a href="mailto:2657282911@qq.com" class="no-underline">2657282911@qq.com</a><br />
+            Phone: <a href="tel:17331097571" class="no-underline">17331097571</a><br />
+            Written by Yihan Wang,22009112.<br>
+            Visit us at:  Hebei University of Technology<br>
+            China<br>
+        </address>
+        <p style="font-family: Cascadia Code SemiBold; color: rgb(255, 255, 255); font-size: 130%">&copy; @DateTime.Now.Year - Travel Around China</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<style>
+    .no-underline {
+        color: rgb(176,196,222);
+        text-decoration: none; 
+    }
+        .no-underline:hover {
+            color: rgb(240,255,255); 
+            text-decoration: none;
+        }
+    .nav-link {
+        color: rgb(139,37,0);
+        margin-right: 50px;
+        font-weight:bold;
+    }
+</style>

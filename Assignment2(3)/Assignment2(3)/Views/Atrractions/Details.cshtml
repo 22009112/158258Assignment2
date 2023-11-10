@@ -1,0 +1,55 @@
+﻿@model Assignment2_3_.Models.Atrraction
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="font-family: Monotype Corsiva; color: rgb(139,69,19); font-size:500%; text-align:center">Details</h2>
+<style>
+    body {
+        background-color: rgb(255,222,173); 
+    }
+</style>
+<div>
+    <h4 style="font-family: Monotype Corsiva; color:rgb(139,69,19);font-size:500%;text-align:left ">Atrraction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="font-family: Segoe Print; color: rgb(139,69,19); font-size: 300%; text-align: left ">
+            @Html.DisplayNameFor(model => model.City.Name)
+            
+        </dt>
+
+        <dd>
+            <span style="color: black; font-family: Microsoft YaHei UI; font-size: 200%; text-align: left ">@Html.DisplayFor(model => model.City.Name)</span>
+</dd>
+
+        <dt style="font-family: Segoe Print; color: rgb(139,69,19); font-size: 300%; text-align: left ">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            <span style="color: black; font-family: Microsoft YaHei UI; font-size: 200%; text-align: left ">@Html.DisplayFor(model => model.Name)</span>
+</dd>
+
+        <dt style="font-family: Segoe Print; color: rgb(139,69,19); font-size: 300%; text-align: left ">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            <span style="color: black; font-family: Microsoft YaHei UI; font-size: 200%; text-align: left ">@Html.DisplayFor(model => model.Price)</span>
+</dd>
+
+        <dt style="font-family: Segoe Print; color: rgb(139,69,19); font-size: 300%; text-align: left ">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            <span style="color: black; font-family: Microsoft YaHei UI; font-size: 200%; text-align: left ">@Html.DisplayFor(model => model.Address)</span>
+</dd>
+
+    </dl>
+</div>
+
+    @Html.ActionLink("Back to List", "Index", null, new {style = "text-decoration:none;color: rgb(210,105,30);" +
+    " font-size:20px;padding: 10px 20px; text-align: center; background-color:rgba(229, 178, 39,0.5);font-family:Algerian;border-radius:5px"
+})

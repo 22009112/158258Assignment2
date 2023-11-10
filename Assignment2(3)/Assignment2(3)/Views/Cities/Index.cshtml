@@ -1,0 +1,139 @@
+﻿@model IEnumerable<Assignment2_3_.Models.City>
+
+@{
+    ViewBag.Title = "City";
+}
+<style>
+    body {
+        background-color: rgb(255,222,173);
+    }
+</style>
+<div class="city"><h2>◤The Beauty of China◢</h2></div>
+<style>
+    .text-and-image {
+        margin-bottom: 20px; 
+        background-color: rgb(210,180,140);
+    }
+
+        .text-and-image img {
+            width: 100%;
+             height:auto;
+        }
+    
+</style>
+
+
+<div class="text-and-image">
+    <div class="row">
+        <div class="col-md-6">
+            <p style="font-size: 170%; font-family: Dubai Medium; padding-left: 5ch"><br />
+                Some scenery is unreachable in our imagination.<br />
+                One leaf can stretch dozens of kilometers.<br />
+                Construct the path in dream with water and cloud.<br />
+                High up in the sky we tango with air currents.<br />
+                To create a perpendicular world.<br />
+                Life’s rhythm gallops on the edge of the land.<br />
+                Deep in the woods, it echoes folklore from ancient tribes.<br />
+                Mountain peak hides traces of Paleozoic beasts.<br />
+                
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img alt="Cycle Pathology" src="~/Content/Images/City1.jpg">
+        </div>
+    </div>
+</div>
+
+<div class="text-and-image">
+    <div class="row">
+        <div class="col-md-6">
+            <img alt="Cycle Pathology" src="~/Content/Images/City2.jpg">
+        </div>
+        <div class="col-md-6">
+            <p style="font-size: 170%; font-family: Dubai Medium; padding-left: 3ch; padding-right:2ch">
+                <br />China's topography is varied and complicated, with towering mountains, basins of different sizes, plateaus and hills, and fertile plains. Abird's eyeview of Chian indaicates that China's terrain descends in three steps from west to east. The first step is the Qinghan-Tibet Plateau, and it goes to plains and foothills on the third step before extending out into the sea.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="city"><h2>◤Various of Cities◢</h2></div>
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+
+    .grid-item {
+        text-align: center;
+        padding: 15px;
+        border: 1px solid #ccc;
+        transition: transform 0.3s ease;
+    }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+</style>
+<style>
+    a {
+        text-decoration: none;
+    }
+        .special-link:hover {
+            color: rgb(139,69,19);
+        }
+</style>
+<body>
+    <div class="grid">
+        <div class="grid-item" style="background-color: rgb(222,184,135) ">
+            <img width="250" height="250" src="~/Content/Images/故宫1.jpg" alt="图片1">
+
+            <h2>
+                @Html.ActionLink("Beijing", "Index", "Atrractions", new { City = "Beijing" },
+                new { style = "text-decoration: none; color: rgb(108, 54, 9);" })
+            </h2>
+        </div>
+        <div class="grid-item" style="background-color: rgb(222,184,135)">
+            <img width="250" height="250" src="~/Content/Images/布达拉宫2.jpg" alt="图片4">
+
+            <h2>
+                @Html.ActionLink("Lasa", "Index", "Atrractions", new { City = "Lasa" },
+                new { style = "text-decoration: none; color: rgb(108, 54, 9);" })
+            </h2>
+        </div>
+
+        <div class="grid-item" style="background-color: rgb(222,184,135)">
+            <img width="250" height="250" src="~/Content/Images/洱海1.jpg" alt="图片3">
+
+            <h2>
+                @Html.ActionLink("Yunnan", "Index", "Atrractions", new { City = "Yunnan" },
+                new { style = "text-decoration: none; color: rgb(108, 54, 9);" })
+            </h2>
+        </div>
+        <div class="grid-item" style="background-color: rgb(222,184,135)">
+            <img width="250" height="250" src="~/Content/Images/兵马俑1.jpg" alt="图片2">
+        <h2>
+            @Html.ActionLink("Shanxi", "Index", "Atrractions", new { City = "Shanxi" },
+            new { style = "text-decoration: none; color: rgb(108, 54, 9);" })
+        </h2>
+        </div>
+        <div class="grid-item" style="background-color: rgb(222,184,135)">
+            <img width="250" height="250" src="~/Content/Images/西湖1.jpg" alt="图片5">
+
+            <h2>
+                @Html.ActionLink("Zhejiang", "Index", "Atrractions", new { City = "Zhejiang" },
+                new { style = "text-decoration: none; color: rgb(108, 54, 9);" })
+            </h2>
+        </div>
+        <div class="grid-item" style="background-color: rgb(222,184,135)">
+            <img width="250" height="250" src="~/Content/Images/天山天池1.jpg" alt="图片6">
+            
+            <h2>
+                @Html.ActionLink("Xinjiang", "Index", "Atrractions", new { City = "Xinjiang" },
+                new { style = "text-decoration: none; color: rgb(108, 54, 9);" })
+            </h2>
+        </div>
+
+    </div>
+</body>

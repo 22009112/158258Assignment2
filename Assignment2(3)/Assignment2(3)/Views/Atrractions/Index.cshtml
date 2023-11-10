@@ -1,0 +1,104 @@
+﻿@model Assignment2_3_.ViewModels.AtrractionIndexViewModel
+    @using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Attraction";
+}
+<style>
+    body {
+        background-color: rgb(255,222,173); 
+    }
+
+    .attraction {
+        margin-bottom: 20px; 
+    }
+
+    img#attraction {
+        width: 250px;
+        height: auto;
+    }
+
+    .grid-item {
+        margin-bottom: 20px;
+        background-color: rgb(210,180,140);
+        border-radius: 30px;
+    }
+
+    .col-md-4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+    }
+
+    .images {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; 
+        border-radius: 20px;
+    }
+
+    #City {
+        height: 40px;
+        width: 100px;
+    }
+
+    .link-style {
+        color: rgb(210,105,30);
+        text-decoration: none;
+    }
+
+        .link-style:hover {
+            color: rgb(139,69,19);
+            text-decoration: underline;
+        }
+</style>
+<h2 style="font-family: Monotype Corsiva; color: rgb(139,69,19); font-size:500%; text-align:center">Attraction</h2>
+<p>
+    <span style="color: rgb(139,37,0); font-weight: bold; font-size: 150%; ">@(String.IsNullOrWhiteSpace(Model.Search) ? "Sowing all " : "You search for " + Model.Search + "found")@Model.Atrractions.TotalItemCount attractions</span>
+    
+    
+</p>
+<p>
+    @using (Html.BeginForm("Index", "Atrractions", FormMethod.Get))
+    {
+        <label style="font-family: Monotype Corsiva; color:darkred; font-size:250%" class="label">Filter by city:</label> @Html.DropDownListFor(vm => vm.City, Model.CityFilterItems, "All");@*@Html.DropDownList("City", "All")*@
+        <input type="submit" value="Filter" style="background-color: rgb(160,82,45); border: 5px solid rgb(139,69,19); color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px; border-radius:10px">
+
+        <input type="hidden" name="Search" id="Search" value="@ViewBag.Search" />
+    }
+
+</p>
+
+<body>
+    <div class="attraction">
+        @foreach (var item in Model.Atrractions)
+        {
+            <div class="grid-item">
+                <div class="row">
+                    <div class="col-md-4">
+                        @if (item.Name != null)
+                        {
+                            string imagePath = $"~/Content/Images/{item.Name.ToLower()}.jpg";
+                            <img id="attraction" class="images" src="@Url.Content(imagePath)" alt="@item.Name">
+                        }
+                    </div>
+                    <div class="col-md-8" id="@item.City.Name">
+                        <p style="font-family: MV Boli; color: black; font-size: 200%; margin-top: 20px">
+                            City: @Html.DisplayFor(modelItem => item.City.Name)<br />
+                            Name: @Html.DisplayFor(modelItem => item.Name)<br />
+                            Price: ￥@Html.DisplayFor(modelItem => item.Price)<br />
+                            Address: @Html.DisplayFor(modelItem => item.Address)<br />
+                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "link-style" })
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+<div>
+    <span style="color: rgb(139,37,0); font-weight: bold; font-size: 150%; ">
+        Page @(Model.Atrractions.PageCount <Model.Atrractions.PageNumber ? 0 : Model.Atrractions.PageNumber) of @Model.Atrractions.PageCount
+    </span>
+    @Html.PagedListPager(Model.Atrractions, page => Url.Action("Index", new { city = Model.City, Search = Model.Search, page }), new PagedListRenderOptions { UlElementClasses = new string[] { "pagination" }, LiElementClasses = new string[] { "page-item" } })

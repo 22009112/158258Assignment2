@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    body {
+        background-color: rgb(255,222,173);
+    }
+    .special-link:hover {
+        color: rgb(139,69,19);
+    }
+    .special-link {
+        color: rgb(205,133,63);
+        text-decoration: none; 
+    }
+    .bottom-right-link {
+        left: 20px;
+        bottom: 20px; 
+        color: rgb(189, 131, 82);
+        text-decoration: none;
+    }
+        .bottom-right-link:hover {
+            color: rgb(139,69,19)
+        }
+</style>
+<main>
+    <section id="main">
+        <h1>◤Introduction◢</h1>
+        <aside>
+            <p>
+                <img alt="Cycle Pathology" src="~/Content/Images/image1.png" />
+            </p>
+        </aside>
+        <div id="China">
+            <p>Life is like a trip,do not have to care about the destination,care about is the scenery along the way and the mood to see the scenery.</p>
+
+            <p>On our junrney, we're not only searching for destinations, but also ourselves. If we can't find ourselves, let's just lose ourselves in these beautiful sceneries.</p>
+            <p>
+                The beautiful China that people yearn for is the beauty of
+                mountains, water, people, environment, life and everything,
+                reflecting the harmonious coexistence of man and nature.
+            </p>
+            <p>Welcome to <strong><i><a href="https://b23.tv/tpcCFHQ" class="special-link">Travel Around China</a></i></strong>, where you'll see the beautiful landscapes of China and pick out the right places for you.</p>
+        </div>
+    </section>
+    <div id="biaoti"><h1>◤Scenery◢</h1></div>
+    <div class="image-container">
+        <img src="~/Content/Images/乌镇首图.jpg" alt="图片1">
+        <img src="~/Content/Images/山川首图.png" alt="图片2">
+        <img src="~/Content/Images/故宫首图.jpg" alt="图片3">
+        <img width="370" height="230" src="~/Content/Images/船河首图.png" alt="图片1">
+        <img src="~/Content/Images/西湖首图.jpg" alt="图片2">
+        <img src="~/Content/Images/长城首图.jpg" alt="图片3">
+    </div>
+    @Html.ActionLink("Learn More", "Index", "Cities", null, new { style = "background-color: rgb(189, 131, 82); color: rgb(139,37,0); padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px;font-size:25px" })
+</main>
